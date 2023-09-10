@@ -1,0 +1,87 @@
+
+.container{
+      margin: 50px;
+}
+
+/* Header */
+header{
+    text-align: center;
+}
+header h5{
+    color:green;
+    font-size:large;
+}
+
+header h2{
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+/* Section */
+section{
+    display: flex;
+    justify-content: space-evenly;
+    gap:20px;   
+    padding: 50px;
+
+}
+.left h2{
+    font-weight: bold;
+    font-size: x-large;
+    
+}
+.left p{
+    text-align: center;
+    font-size: xx-large;
+}
+.right h2{
+    font-weight: bold;
+    font-size: x-large;
+}
+.right p{
+    text-align: center;
+    font-size: xx-large;
+}
+.left .button{
+    background-color:rgb(13, 101, 13);
+    color: white;
+    width:80px;
+    height:40px;
+}
+.right .button{
+    background-color:rgb(13, 101, 13);
+    color: white;
+    width:80px;
+    height:40px;
+}
+
+.middle img{
+    width:200px;
+    height: auto;
+}
+
+/* Footer */
+footer #resetbtn{
+    width:80px;
+    height: 30px;
+    background-color:palevioletred;
+    color: black;
+    font-weight: bolder;
+
+}
+#player1:hover{
+    background-color: grey;
+    color:black;
+}
+#player2:hover{
+    background-color: grey;
+    color:black;
+}
+
+#resetbtn:hover{
+    background-color:grey;
+}
+footer{
+    text-align: center;
+}

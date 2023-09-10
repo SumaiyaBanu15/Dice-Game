@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game using DOM</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+    <header class="titles"> 
+        <h5> Let's Play Dice</h5>
+        <h2> Player-1 to Play </h2>
+    </header>
+
+    <!--  Section  -->
+    <section>
+        <div class="left">  
+            <h2>Player-1</h2>
+            <p class="scores" id="player1score"> 0 </p>
+            <input type="button" value="Roll Now" class="button" id="player1">
+        </div>
+
+        <div class="middle">
+            <img src="./Images/Dice-1.png" alt="Dice's Images" class="diceroll">
+        </div>
+
+        <div class="right">
+            <h2>Player-2</h2>
+            <p class="scores" id="player2score"> 0 </p>
+            <input type="button" value="Roll Now" class="button" id="player2">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="button">
+            <input type="button" value="RESET" id="resetbtn">
+        </div>
+    </footer>
+
+     </div>
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
