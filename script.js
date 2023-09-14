@@ -71,5 +71,5 @@ resetAll.addEventListener("click", function(){
     player2Score.textContent = 0;
     player1Turn = true;
     btnRoll1.disabled = false;
-    btnRoll2.disabled = false;
+    btnRoll2.disabled = true;
 })  
