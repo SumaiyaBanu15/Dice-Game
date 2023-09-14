@@ -31,9 +31,11 @@ btnRoll1.addEventListener("click", function (){
        btnRoll1.disabled = true;
        btnRoll2.disabled = false;
     }
-    else if(sum1 >= 30){
+
+    if(sum1 >= 30){
         announceWinner("Player 1");
-       }
+    }
+
     })
 
 let sum2 = 0;
@@ -56,9 +58,11 @@ btnRoll2.addEventListener("click", function (){
        btnRoll1.disabled = false;
        btnRoll2.disabled = true;
     }
-    else if(sum2 >= 30){
+
+    if(sum2 >= 30){
         announceWinner("Player 2");
-       }
+    }
+
     })
 
 function announceWinner(winner){
@@ -72,6 +76,4 @@ resetAll.addEventListener("click", function(){
     player1Turn = true;
     btnRoll1.disabled = false;
     btnRoll2.disabled = true;
-
-    alert("");
 })  
