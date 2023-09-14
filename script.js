@@ -19,7 +19,7 @@ btnRoll1.addEventListener("click", function (){
     const diceroll1 = Math.floor(Math.random() * 6) + 1;
     diceRoll1.src = `./Images/Dice-${diceroll1}.png`;
 
-       if(diceroll1 !== 1){
+       if(sum1 < 30){
         sum1 = sum1 + diceroll1;
         player1Score.textContent = sum1;
        }
@@ -28,10 +28,10 @@ btnRoll1.addEventListener("click", function (){
        }
        else{
         player1Turn = true;
-        btnRoll1.disabled = true;
-        btnRoll2.disabled = false;
        }
-      
+       
+       btnRoll1.disabled = true;
+       btnRoll2.disabled = false;
     
     })
 
@@ -43,7 +43,7 @@ btnRoll2.addEventListener("click", function (){
     const diceroll2 = Math.floor(Math.random() * 6) + 1;
     diceRoll2.src = `./Images/Dice-${diceroll2}.png`;
     
-       if(diceroll2 !== 1){
+       if(sum2 < 30){
         sum2 = sum2 + diceroll2;
         player2Score.textContent = sum2;
        }
@@ -52,10 +52,10 @@ btnRoll2.addEventListener("click", function (){
        }
        else{
         player1Turn = false;
-        btnRoll1.disabled = false;
-        btnRoll2.disabled = true;
        }
-    
+       
+       btnRoll1.disabled = false;
+       btnRoll2.disabled = true;
     })
 
 function announceWinner(winner){
@@ -67,6 +67,6 @@ resetAll.addEventListener("click", function(){
     player1Score.textContent = 0;
     player2Score.textContent = 0;
     player1Turn = true;
-    btnRoll1.disabled = true;
+    btnRoll1.disabled = false;
     btnRoll2.disabled = false;
 })  
