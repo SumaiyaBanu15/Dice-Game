@@ -15,16 +15,14 @@ btnRoll1.addEventListener("click", function (){
 
 
     let diceRoll1 = document.querySelector(".diceroll")
-
+ 
+    if(sum1 < 30){
     const diceroll1 = Math.floor(Math.random() * 6) + 1;
     diceRoll1.src = `./Images/Dice-${diceroll1}.png`;
 
-       if(sum1 < 30){
+       if(diceroll1 !== 1){
         sum1 = sum1 + diceroll1;
         player1Score.textContent = sum1;
-       }
-       else if(sum1 >= 30){
-        announceWinner("Player 1");
        }
        else{
         player1Turn = true;
@@ -32,23 +30,24 @@ btnRoll1.addEventListener("click", function (){
        
        btnRoll1.disabled = true;
        btnRoll2.disabled = false;
-    
+    }
+    else if(sum1 >= 30){
+        announceWinner("Player 1");
+       }
     })
 
 let sum2 = 0;
 btnRoll2.addEventListener("click", function (){
 
+    if(sum2 < 30){
     let diceRoll2 = document.querySelector(".diceroll")
     
     const diceroll2 = Math.floor(Math.random() * 6) + 1;
     diceRoll2.src = `./Images/Dice-${diceroll2}.png`;
     
-       if(sum2 < 30){
+       if(diceroll2 !== 1){
         sum2 = sum2 + diceroll2;
         player2Score.textContent = sum2;
-       }
-       else if(sum2 >= 30){
-        announceWinner("Player 2");
        }
        else{
         player1Turn = false;
@@ -56,6 +55,10 @@ btnRoll2.addEventListener("click", function (){
        
        btnRoll1.disabled = false;
        btnRoll2.disabled = true;
+    }
+    else if(sum2 >= 30){
+        announceWinner("Player 2");
+       }
     })
 
 function announceWinner(winner){
