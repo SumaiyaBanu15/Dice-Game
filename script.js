@@ -73,6 +73,8 @@ const resetAll = document.getElementById("resetbtn")
 resetAll.addEventListener("click", function(){
     player1Score.textContent = 0;
     player2Score.textContent = 0;
+    sum1 = 0;
+    sum2 = 0;
     player1Turn = true;
     btnRoll1.disabled = false;
     btnRoll2.disabled = true;
