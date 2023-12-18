@@ -5,66 +5,53 @@ const score2 = document.getElementById("player2");
 const player1Score = document.getElementById("player1score");
 const player2Score = document.getElementById("player2score");
 
-const btnRoll1 = document.getElementById("player1");
-const btnRoll2 = document.getElementById("player2");
+const btnRoll1 = document.getElementById("btnRoll1");
+const btnRoll2 = document.getElementById("btnRoll2");
 
 let player1Turn = true;
 
 let sum1 = 0;
 btnRoll1.addEventListener("click", function (){
-
-
-    if(sum1 >= 30){
-        announceWinner("Player 1");
-    }
- 
-    else{
     let diceRoll1 = document.querySelector(".diceroll")
     const diceroll1 = Math.floor(Math.random() * 6) + 1;
     diceRoll1.src = `./Images/Dice-${diceroll1}.png`;
-
-       if(diceroll1){
-        sum1 = sum1 + diceroll1;
-        player1Score.textContent = sum1;
-       }
-       else{
-        player1Turn = true;
-       }
-    }
-       
+    
+       sum1 = sum1 + diceroll1;
+       player1Score.textContent = sum1;
+    
        btnRoll1.disabled = true;
        btnRoll2.disabled = false;
+
+    if(sum1 >= 30){
+        announceWinner("Player 1");
+        return;
+    }
 
     })
 
 let sum2 = 0;
 btnRoll2.addEventListener("click", function (){
-
-
-    if(sum2 >= 30){
-        announceWinner("Player 2");
-    }
-    else{
     let diceRoll2 = document.querySelector(".diceroll")
     
     const diceroll2 = Math.floor(Math.random() * 6) + 1;
     diceRoll2.src = `./Images/Dice-${diceroll2}.png`;
     
-       if(diceroll2){
-        sum2 = sum2 + diceroll2;
-        player2Score.textContent = sum2;
-       }
-       else{
-        player1Turn = false;
-       }
-    }
+       sum2 = sum2 + diceroll2;
+       player2Score.textContent = sum2;
+       
        btnRoll1.disabled = false;
        btnRoll2.disabled = true;
 
+    if(sum2 >= 30){
+        announceWinner("Player 2");
+        return;
+    }
     })
 
 function announceWinner(winner){
-    alert(`${winner} wins the Game!🏆`)
+    alert(`${winner} wins the Game!🏆`);
+    btnRoll1.disabled = true;
+    btnRoll2.disabled = true;
 }
 
 const resetAll = document.getElementById("resetbtn") 
